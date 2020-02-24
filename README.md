@@ -1,6 +1,7 @@
 # PMI
 Pimp my intra
 
+![HELP](https://github.com/Neotoxic-off/pmi/raw/master/DOCUMENTATION.md)
 
 ### Install:
 ```
