@@ -14,4 +14,9 @@ chmod +x PMI
 ./PMI
 ```
 
+### Custom:
+- [X] : Profile Image
+- [X] : Main Color
+- [X] : Header image
+
 Css file will be generated with default name: 'intra_style.css'
