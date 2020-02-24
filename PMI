@@ -1,0 +1,102 @@
+#!/bin/bash
+
+banner()
+{
+    printf "Tools required:\n"
+    printf "    - Stylus on firefox\n"
+    printf "    - An epitech.eu email\n\n"
+    generate
+}
+
+generate()
+{
+    printf "Profile image url..: "
+    read profile
+
+    printf "Main color (HEX)...: "
+    read color
+
+    printf "Header image url...: "
+    read header
+
+    echo "/* No Stress Intranet" > intra_style.css
+    echo "** Remove all this useless sh*t !" >> intra_style.css
+    echo "** By HentaiShiroYuki" >> intra_style.css
+    echo "** Generated with PIMP MY INTRA" >> intra_style.css
+    echo "*/ " >> intra_style.css
+    echo " " >> intra_style.css
+    echo "/* Variables */" >> intra_style.css
+    echo ":root" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    /*Changer cette url pour changer la photo de profil*/" >> intra_style.css
+    echo "    --custom-profile-picture: url($profile);" >> intra_style.css
+    echo "    /*Changer cette url pour changer le bouton de login*/" >> intra_style.css
+    echo "    --custom-login-button: url($profile);" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* Repositionne le bouton de login pour certains appareils linux */" >> intra_style.css
+    echo "#auth-login .slider" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    width: auto;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* Change l'image du bouton de login */" >> intra_style.css
+    echo "#auth-login .login-student a" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    background: center center var(--custom-login-button);" >> intra_style.css
+    echo "    background-size: cover;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* Hide GPA */" >> intra_style.css
+    echo "div .rzone" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    display: none;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* Change la photo de profil */" >> intra_style.css
+    echo ".picture" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    background:left center var(--custom-profile-picture) !important;" >> intra_style.css
+    echo "    background-size: 100% 100% !important;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* Some more magic */" >> intra_style.css
+    echo " .picture img," >> intra_style.css
+    echo "#profil .bloc.main .data .picture img" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    display: none;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* Even more magic */" >> intra_style.css
+    echo "#header #notification .dropdown.pedago" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    display: none;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* MAIN HEADER */" >> intra_style.css
+    echo "#header .header-wrapper" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    background-image: url($header) !important;" >> intra_style.css
+    echo "    background-repeat: no-repeat;" >> intra_style.css
+    echo "    background-size: 100%;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "/* BOX BACKGROUND*/" >> intra_style.css
+    echo "section" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    background: $color !important;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "#content" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    background: $color !important;" >> intra_style.css
+    echo "}" >> intra_style.css
+    echo "" >> intra_style.css
+    echo "#sidebar" >> intra_style.css
+    echo "{" >> intra_style.css
+    echo "    background: $color !important;" >> intra_style.css
+    echo "}" >> intra_style.css
+
+}
+
+banner
