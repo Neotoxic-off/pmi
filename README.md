@@ -1,2 +1,2 @@
-# pmi
+# PMI
 Pimp my intra
