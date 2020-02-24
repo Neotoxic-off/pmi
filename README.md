@@ -23,3 +23,14 @@ chmod +x PMI
 - [X] : Header image
 
 Css file will be generated with default name: 'intra_style.css'
+
+
+### Configuration
+```
+URL images:
+    <PARAMETER>=url(<URL OF THE IMAGE>)
+Gradient:
+    <PARAMETER>=linear-gradient(<RGB CODE>)
+    <PARAMETER>=radial-gradient(<RGB CODE>)
+    <PARAMETER>=repeating-linear-gradient(<RGB CODE>)
+```
