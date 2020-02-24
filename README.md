@@ -21,5 +21,4 @@ chmod +x PMI
 - [X] : Main Color
 - [X] : Header image
 
-Css file will be generated with default name: 'style.css'
-If you need help: ![man documentation](https://github.com/Neotoxic-off/pmi/blob/master/DOCUMENTATION.md)
+If you need help: ![man pmi](https://github.com/Neotoxic-off/pmi/blob/master/DOCUMENTATION.md)
