@@ -9,6 +9,9 @@ cd pmi
 chmod +x PMI
 ```
 
+### Requirement
+- Stylus (firefox): https://addons.mozilla.org/en-US/firefox/addon/styl-us/
+
 ### Usage:
 ```
 ./PMI
