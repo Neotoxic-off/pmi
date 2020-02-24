@@ -1,8 +1,6 @@
 # PMI
 Pimp my intra
 
-![HELP](https://github.com/Neotoxic-off/pmi/blob/master/DOCUMENTATION.md)
-
 ### Install:
 ```
 git clone https://github.com/Neotoxic-off/pmi
@@ -24,3 +22,4 @@ chmod +x PMI
 - [X] : Header image
 
 Css file will be generated with default name: 'style.css'
+If you need help: ![man documentation](https://github.com/Neotoxic-off/pmi/blob/master/DOCUMENTATION.md)
