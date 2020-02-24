@@ -10,14 +10,32 @@ banner()
 
 generate()
 {
-    printf "Profile image url..: "
-    read profile
+    input="config.ini"
 
-    printf "Main color (HEX)...: "
-    read color
+    if [[ -f $input ]]; then
+        printf "Config file........: FOUND\n"
+    else
+        printf "Config file........: NOT FOUND\n"
+        exit
+    fi
 
-    printf "Header image url...: "
-    read header
+    while IFS= read -r line
+    do
+        if [[ $line = "PROFILE="* ]]; then
+            profile=$(echo $line | cut -d '=' -f 2)
+            printf "Profile picture: $profile\n"
+        fi
+        if [[ $line == "COLOR="* ]]; then
+            color=$(echo $line | cut -d '=' -f 2)
+            printf "Main color: $color\n"
+
+        fi
+        if [[ $line == "HEADER="* ]]; then
+            header=$(echo $line | cut -d '=' -f 2)
+            printf "Header: $header\n"
+        fi
+
+    done < "$input"
 
     echo "/* No Stress Intranet" > intra_style.css
     echo "** Remove all this useless sh*t !" >> intra_style.css
