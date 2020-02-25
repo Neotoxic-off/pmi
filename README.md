@@ -21,4 +21,4 @@ chmod +x PMI
 - [X] : Main Color
 - [X] : Header image
 
-If you need help: ![man pmi](https://github.com/Neotoxic-off/pmi/blob/master/DOCUMENTATION.md)
+If you need help: [man pmi](https://github.com/Neotoxic-off/pmi/blob/master/DOCUMENTATION.md)
