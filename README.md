@@ -13,7 +13,7 @@ chmod +x PMI
 
 ### Usage:
 ```
-./PMI
+./PMI <custom output name>
 ```
 
 ### Custom:
