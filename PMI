@@ -1,13 +1,5 @@
 #!/bin/bash
 
-banner()
-{
-    printf "Tools required:\n"
-    printf "    - Stylus on firefox\n"
-    printf "    - An epitech.eu email\n\n"
-    generate
-}
-
 generate()
 {
     input="config.ini"
@@ -20,105 +12,269 @@ generate()
         exit
     fi
 
+    if [[ ! -z $1 ]]; then
+        output=$1
+    fi
+
+    if [[ -f $output ]]; then
+        printf "Output file........: FOUND\n"
+        printf "Overwrite '$output' [yes/no]: "
+        read overwrite
+        if [[ $overwrite == "no" ]]; then
+            printf "So.. Change the output in arguments\n"
+            exit
+        fi
+    fi
+    printf "Status.............: GENERATING\n"
     while IFS= read -r line
     do
-        if [[ $line = "PROFILE="* ]]; then
-            profile=$(echo $line | cut -d '=' -f 2)
-            printf "Profile picture: $profile\n"
+        if [[ $line = "custom-profile-picture="* ]]; then
+            custom_profile_picture=$(echo $line | cut -d '=' -f 2)
         fi
-        if [[ $line == "COLOR="* ]]; then
-            color=$(echo $line | cut -d '=' -f 2)
-            printf "Main color: $color\n"
-
+        if [[ $line == "custom-login-button="* ]]; then
+            custom_login_button=$(echo $line | cut -d '=' -f 2)
         fi
-        if [[ $line == "HEADER="* ]]; then
-            header=$(echo $line | cut -d '=' -f 2)
-            printf "Header: $header\n"
+        if [[ $line == "custom-header-logo-background="* ]]; then
+            custom_header_logo_background=$(echo $line | cut -d '=' -f 2)
         fi
-        if [[ $line == "GPA="* ]]; then
-            gpa=$(echo $line | cut -d '=' -f 2)
-            printf "Gpa: $gpa\n"
+        if [[ $line == "custom-header-background="* ]]; then
+            custom_header_background=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-top-tabs-background="* ]]; then
+            custom_top_tabs_background=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-log-graph-fill="* ]]; then
+            custom_log_graph_fill=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-main-background="* ]]; then
+            custom_main_background=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-sections-color="* ]]; then
+            custom_sections_color=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-sidebar-background="* ]]; then
+            custom_sidebar_background=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-sidebar-hover-background="* ]]; then
+            custom_sidebar_hover_background=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-gpa-display="* ]]; then
+            custom_gpa_display=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "custom-pedago-i-display="* ]]; then
+            custom_pedago_i_display=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "before-gpa="* ]]; then
+            before_gpa=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "after-gpa="* ]]; then
+            after_gpa=$(echo $line | cut -d '=' -f 2)
+        fi
+        if [[ $line == "email="* ]]; then
+            email=$(echo $line | cut -d '=' -f 2)
         fi
     done < "$input"
 
-    echo "    /* No Stress Intranet
-    ** Remove all this useless sh*t !
-    ** By HentaiShiroYuki
-    ** Generated with PIMP MY INTRA
-    */ 
-     
-    /* Variables */
-    :root
-    {
-        /*Changer cette url pour changer la photo de profil*/
-        --custom-profile-picture: $profile;
-        /*Changer cette url pour changer le bouton de login*/
-        --custom-login-button: $profile;
-    }
-    
-    /* Repositionne le bouton de login pour certains appareils linux */
-    #auth-login .slider
-    {
-        width: auto;
-    }
-    
-    /* Change l'image du bouton de login */
-    #auth-login .login-student a
-    {
-        background: center center var(--custom-login-button);
-        background-size: cover;
-    }
-    
-    /* Hide GPA */
-    div .rzone
-    {
-        display: none;
-    }
-    
-    /* Change la photo de profil */
-    .picture
-    {
-        background:left center var(--custom-profile-picture) !important;
-        background-size: 100% 100% !important;
-    }
-    
-    /* Some more magic */
-     .picture img,
-    #profil .bloc.main .data .picture img
-    {
-        display: none;
-    }
-    
-    /* Even more magic */
-    #header #notification .dropdown.pedago
-    {
-        display: none;
-    }
-    
-    /* MAIN HEADER */
-    #header .header-wrapper
-    {
-        background-image: $header !important;
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
-    
-    /* BOX BACKGROUND*/
-    section
-    {
-        background: $color !important;
-    }
-    
-    #content
-    {
-        background: $color !important;
-    }
-    
-    #sidebar
-    {
-        background: $color !important;
-    }" > $output
+    printf "CONFIGURATION:\n"
+    echo "
+    [*]             profile picture: $custom_profile_picture;
+    [*]                login button: $custom_login_button;
+    [*]      header logo background: $custom_header_logo_background;
+    [*]           header background: $custom_header_background;
+    [*] c ustom top tabs background: $custom_top_tabs_background;
+    [*]              log graph fill: $custom_log_graph_fill;
+    [*]             main background: $custom_main_background;
+    [*]              sections color: $custom_sections_color;
+    [*]          sidebar background: $custom_sidebar_background;
+    [*]    sidebar hover background: $custom_sidebar_hover_background;
+    [*]                 gpa display: $custom_gpa_display;
+    [*]                   i display: $custom_pedago_i_display;
+    [*]                  before gpa: $before_gpa;
+    [*]                   after gpa: $after_gpa;
+    [*]                       email: $email;
+    "
 
+    echo "/* Variables */
+:root
+{
+    --custom-profile-picture: $custom_profile_picture;
+    --custom-login-button: $custom_login_button;
+    --custom-header-logo-background: $custom_header_logo_background;
+    --custom-header-background: $custom_header_background;
+    --custom-top-tabs-background: $custom_top_tabs_background;
+    --custom-log-graph-fill: $custom_log_graph_fill;
+    --custom-main-background: $custom_main_background;
+    --custom-sections-color: $custom_sections_color;
+    --custom-sidebar-background: $custom_sidebar_background;
+    --custom-sidebar-hover-background: $custom_sidebar_hover_background;
+    --custom-gpa-display: $custom_gpa_display;
+    --custom-pedago-i-display: $custom_pedago_i_display;
 }
 
-banner
+/*###### Login Button #######*/
+/* Fix login button position on lunix */
+#auth-login .slider
+{
+    width: auto;
+}
+
+/* Custom image for the login button */
+#auth-login .login-student a
+{
+    background: center center var(--custom-login-button);
+    background-size: cover;
+}
+/*###########################*/
+
+
+/*###### Login Graph Color #######*/
+path[fill=\"#00FF00\"],
+rect[fill=\"#00FF00\"]
+{
+    fill: var(--custom-log-graph-fill) !important;
+}
+
+rect[stroke=\"#00FF00\"]
+{
+    stroke: var(--custom-log-graph-fill) !important;
+}
+/*################################*/
+
+
+/*###### GPA & Credits display ######*/
+div .rzone
+{
+    display: var(--custom-gpa-display);
+}
+/*###################################*/
+
+
+/*###### Custom Profile Picture ######*/
+
+.picture[href=\"/user/$email/\"],
+.member[data-member-login=\"$email\"] .picture
+{
+    background:left center var(--custom-profile-picture) !important;
+    background-size: 100% 100% !important;
+}
+
+.member[data-member-login=\"$email\"] .picture
+{
+    width: 60px;
+    height: 80px;
+    background-position: center center;
+}
+
+.data .picture[href$=\"@epitech.eu/\"]
+{
+    background: rgba(0,0,0,0) !important;
+}
+
+img[src=\"/file/userprofil/commentview/$email.jpg\"]
+{
+    display: none !important;
+}
+
+#profil .bloc.main .data .picture img
+{
+    display: none;
+}
+
+.title .picture,
+.data .picture
+{
+    background:left center var(--custom-profile-picture) !important;
+    background-size: 100% 100% !important;
+}
+
+/*####################################*/
+
+
+/*###### Custom Epitech Logo ######*/
+#header .intra .reserved
+{
+    background: var(--custom-header-logo-background) !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    width: 175px !important;
+    height: 70px !important;
+}
+/*#################################*/
+
+
+/*###### Top banner style ######*/
+/* Top banner background color */
+#header .header-wrapper
+{
+    background: var(--custom-header-background);
+}
+
+#gdpr-banner,
+#header #identification .infos,
+#header #notification
+{
+    background: var(--custom-top-tabs-background);
+}
+/*#############################*/
+
+/*###### Sidebar Customization ######*/
+/* Background de la sidebar */
+#sidebar
+{
+    background: var(--custom-sidebar-background) !important;
+}
+
+/* Background de l'élément survolé */
+#wall #sidebar a:hover
+{
+    background: var(--custom-sidebar-hover-background) !important;
+}
+/*#############################*/
+
+/*###### Home background color ######*/
+#content
+{
+    background: var(--custom-main-background) !important;
+}
+/*###################################*./
+
+
+/*###### Sections background color ######*/
+section
+{
+    background: var(--custom-sections-color) !important;
+}
+/*########################################*/
+
+
+/*###### Small Things ######*/
+/* Hide the little arrow things on the home info list */
+.arrow.picture
+{
+    display: none;
+}
+
+/*###### GPA VALUE ######*/
+.note span:last-child:before
+{
+    content: \"$before_gpa\" !important;
+}
+.note span:last-child:after
+{
+    content: \"$after_gpa\" !important;
+}
+
+/* Hide the (i) button on homepage*/
+#header #notification .dropdown.pedago
+{
+    display: var(--custom-pedago-i-display);
+}" > $output
+
+    if [[ -f $output ]]; then
+        printf "Status.............: GENERATED\n"
+    else
+        printf "Status.............: FAILED\n"
+    fi
+}
+
+generate $1

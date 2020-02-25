@@ -1,0 +1,177 @@
+/* Variables */
+:root
+{
+    --custom-profile-picture: url(https://pbs.twimg.com/profile_images/771263594025537540/zw3cvfor_400x400.jpg);
+    --custom-login-button: url(https://pbs.twimg.com/profile_images/771263594025537540/zw3cvfor_400x400.jpg);
+    --custom-header-logo-background: url(https://lh4.ggpht.com/RiCZ_ihMBeW_THYRBOKh4jGQmgvktEjXhzIhr-JTN3keqIMOTw6HyUJhrF5z9fhttC02=w300);
+    --custom-header-background: url(https://github.com/Neotoxic-off/pmi/raw/master/img/wall.jpg);
+    --custom-top-tabs-background: #000;
+    --custom-log-graph-fill: #FF0000;
+    --custom-main-background: #000;
+    --custom-sections-color: rgba(255, 255, 255, 0.5);
+    --custom-sidebar-background: #000;
+    --custom-sidebar-hover-background: grey;
+    --custom-gpa-display: block;
+    --custom-pedago-i-display: block;
+    --custom-before-gpa: 66;
+    --custom-after-gpa: 99;
+}
+
+/*###### Login Button #######*/
+/* Fix login button position on lunix */
+#auth-login .slider
+{
+    width: auto;
+}
+
+/* Custom image for the login button */
+#auth-login .login-student a
+{
+    background: center center var(--custom-login-button);
+    background-size: cover;
+}
+/*###########################*/
+
+
+/*###### Login Graph Color #######*/
+path[fill="#00FF00"],
+rect[fill="#00FF00"]
+{
+    fill: var(--custom-log-graph-fill) !important;
+}
+
+rect[stroke="#00FF00"]
+{
+    stroke: var(--custom-log-graph-fill) !important;
+}
+/*################################*/
+
+
+/*###### GPA & Credits display ######*/
+div .rzone
+{
+    display: var(--custom-gpa-display);
+}
+/*###################################*/
+
+
+/*###### Custom Profile Picture ######*/
+
+.picture[href="/user/user.login@epitech.eu/"],
+.member[data-member-login="user.login@epitech.eu"] .picture
+{
+    background:left center var(--custom-profile-picture) !important;
+    background-size: 100% 100% !important;
+}
+
+.member[data-member-login="user.login@epitech.eu"] .picture
+{
+    width: 60px;
+    height: 80px;
+    background-position: center center;
+}
+
+.data .picture[href$="@epitech.eu/"]
+{
+    background: rgba(0,0,0,0) !important;
+}
+
+img[src="/file/userprofil/commentview/user.login@epitech.eu.jpg"]
+{
+    display: none !important;
+}
+
+#profil .bloc.main .data .picture img
+{
+    display: none;
+}
+
+.title .picture,
+.data .picture
+{
+    background:left center var(--custom-profile-picture) !important;
+    background-size: 100% 100% !important;
+}
+
+/*####################################*/
+
+
+/*###### Custom Epitech Logo ######*/
+#header .intra .reserved
+{
+    background: var(--custom-header-logo-background) !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    width: 175px !important;
+    height: 70px !important;
+}
+/*#################################*/
+
+
+/*###### Top banner style ######*/
+/* Top banner background color */
+#header .header-wrapper
+{
+    background: var(--custom-header-background);
+}
+
+#gdpr-banner,
+#header #identification .infos,
+#header #notification
+{
+    background: var(--custom-top-tabs-background);
+}
+/*#############################*/
+
+/*###### Sidebar Customization ######*/
+/* Background de la sidebar */
+#sidebar
+{
+    background: var(--custom-sidebar-background) !important;
+}
+
+/* Background de l'élément survolé */
+#wall #sidebar a:hover
+{
+    background: var(--custom-sidebar-hover-background) !important;
+}
+/*#############################*/
+
+/*###### Home background color ######*/
+#content
+{
+    background: var(--custom-main-background) !important;
+}
+/*###################################*./
+
+
+/*###### Sections background color ######*/
+section
+{
+    background: var(--custom-sections-color) !important;
+}
+/*########################################*/
+
+
+/*###### Small Things ######*/
+/* Hide the little arrow things on the home info list */
+.arrow.picture
+{
+    display: none;
+}
+
+/*###### GPA VALUE ######*/
+.note span:last-child:before
+{
+    content: "66" !important;
+}
+.note span:last-child:after
+{
+    content: "99" !important;
+}
+
+/* Hide the (i) button on homepage*/
+#header #notification .dropdown.pedago
+{
+    display: var(--custom-pedago-i-display);
+}
