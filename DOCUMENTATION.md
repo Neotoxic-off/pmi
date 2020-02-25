@@ -1,8 +1,5 @@
 # DOCUMENTATION: Pimp my intra
 
-default name: style
-type: .css
-
 ## Properties types
 ```
 ┌───────────────────────────────────┬───────────────┐
