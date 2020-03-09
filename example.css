@@ -8,13 +8,13 @@
     --custom-top-tabs-background: #000;
     --custom-log-graph-fill: #FF0000;
     --custom-main-background: #000;
-    --custom-sections-color: rgba(255, 255, 255, 0.5);
+    --custom-sections-color: black;
     --custom-sidebar-background: #000;
     --custom-sidebar-hover-background: grey;
     --custom-gpa-display: block;
     --custom-pedago-i-display: block;
-    --custom-before-gpa: 66;
-    --custom-after-gpa: 99;
+    --custom-before-gpa: 0;
+    --custom-after-gpa: 8;
 }
 
 /*###### Login Button #######*/
@@ -37,7 +37,7 @@
 path[fill="#00FF00"],
 rect[fill="#00FF00"]
 {
-    fill: var(--custom-log-graph-fill) !important;
+fill: var(--custom-log-graph-fill) !important;
 }
 
 rect[stroke="#00FF00"]
@@ -57,14 +57,14 @@ div .rzone
 
 /*###### Custom Profile Picture ######*/
 
-.picture[href="/user/user.login@epitech.eu/"],
-.member[data-member-login="user.login@epitech.eu"] .picture
+.picture[href="/user/paul.gardien@epitech.eu/"],
+.member[data-member-login="paul.gardien@epitech.eu"] .picture
 {
     background:left center var(--custom-profile-picture) !important;
     background-size: 100% 100% !important;
 }
 
-.member[data-member-login="user.login@epitech.eu"] .picture
+.member[data-member-login="paul.gardien@epitech.eu"] .picture
 {
     width: 60px;
     height: 80px;
@@ -76,7 +76,7 @@ div .rzone
     background: rgba(0,0,0,0) !important;
 }
 
-img[src="/file/userprofil/commentview/user.login@epitech.eu.jpg"]
+img[src="/file/userprofil/commentview/paul.gardien@epitech.eu.jpg"]
 {
     display: none !important;
 }
@@ -163,11 +163,11 @@ section
 /*###### GPA VALUE ######*/
 .note span:last-child:before
 {
-    content: "66" !important;
+    content: "6" !important;
 }
 .note span:last-child:after
 {
-    content: "99" !important;
+    content: "9" !important;
 }
 
 /* Hide the (i) button on homepage*/
